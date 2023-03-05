@@ -1,6 +1,6 @@
 import pytest
 
-from main import Channel
+from class_channel import Channel
 
 
 @pytest.fixture
