@@ -1,8 +1,8 @@
 import os
-from googleapiclient.discovery import build
+from class_mixin_service import MixinService
 
 
-class Video:
+class Video(MixinService):
     def __init__(self, video_id):
         self.video_id = video_id
         youtube = self.get_service()
@@ -11,11 +11,6 @@ class Video:
         self.view_count = self.video_response['items'][0]['statistics']['viewCount']
         self.like_count = self.video_response['items'][0]['statistics']['likeCount']
 
-    @classmethod
-    def get_service(cls):
-        api_key: str = os.getenv('API_UT')
-        youtube = build('youtube', 'v3', developerKey=api_key)
-        return youtube
 
     def __str__(self):
         return self.title
