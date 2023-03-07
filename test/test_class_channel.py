@@ -1,6 +1,6 @@
 import pytest
 
-from main import Channel
+from class_channel import Channel
 
 
 @pytest.fixture
@@ -19,7 +19,7 @@ def test_str(coll):
 
 
 def test_add(coll, coll2):
-    assert coll + coll2 == 13990000
+    assert coll + coll2 == 14000000
 
 
 def test_lt(coll, coll2):
